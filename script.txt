@@ -1,0 +1,53 @@
+# Importing Packages
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import warnings
+warnings.filterwarnings('ignore')
+import seaborn as sns
+from sklearn import tree
+
+df = pd.read_csv('Dataset.csv')
+
+df.shape
+
+df.head()
+
+# Drop column if 30% values of column is NAN
+df = df.loc[:, df.isnull().mean() < .3]
+
+#df.isnull().mean()
+#df.isnull().sum()
+
+df.shape
+
+#We have dropped 66% of our columns
+-155/455 + 1
+
+df.head()
+
+#df['wl_org'].value_counts()
+
+#df['wl_org'].value_counts().plot.bar()
+#plt.show()
+
+#df['num_prev_tx'].value_counts()
+
+#df['num_prev_tx'].value_counts().plot.bar()
+#plt.show()
+
+#df.groupby(['num_prev_tx','death'])['death'].count()
+
+#df.groupby(['num_prev_tx','death'])['death'].count().plot.bar()
+#plt.show()
+
+# output clean df to desktop
+df.to_csv(r'C:\Users\Agi\Desktop\DropBox\Dropbox\Classes\ITSS 4354\Final Project\dfclean.csv' ,encoding='utf-8')
+
+#column_names = list(df.columns.values)
+
+#column_names
+
+
+
+
